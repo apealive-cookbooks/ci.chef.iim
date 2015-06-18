@@ -69,7 +69,7 @@ def _install(install_command_snippet, maybe_secure_storage_file, maybe_master_pa
         end
      end
 
-     install_command = "#{im_dir}/imcl -showProgress -accessRights #{im_mode} #{install_command_snippet} -acceptLicense #{install_command_snippet} -log /tmp/install_log.xml #{credentials_bash_snippet}"
+     install_command = "#{im_dir}/imcl #{install_command_snippet} -showProgress -accessRights #{im_mode} -acceptLicense #{install_command_snippet} -log /tmp/install_log.xml #{credentials_bash_snippet}"
      execute "install #{new_resource.name}" do
       user im_user
       group im_group
